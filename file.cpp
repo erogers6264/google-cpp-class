@@ -2,6 +2,7 @@
 // Description: An illustration of file processing
 #include <fstream>
 #include <iostream>
+
 using namespace std;
 
 int main() {
@@ -16,5 +17,18 @@ int main() {
   // Create an ofstream called People, open the stream for output.
   ofstream People(file_name, ios::out);
   // Write the output to the stream.
-  People << first_name << endl << last_name << endl << age << endl; return 0;
+  People << first_name << endl << last_name << endl << age << endl;
+  People.close();
+
+  ifstream PeopleIn(file_name);
+
+  PeopleIn >> first_name >> last_name >> age;
+
+  cout << endl << "First Name: " << first_name;
+  cout << endl << "Last Name: " << last_name;
+  cout << endl << "Age: " << age;
+  cout << endl;
+
+  PeopleIn.close();
+  return 0;
 }
