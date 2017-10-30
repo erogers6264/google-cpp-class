@@ -8,6 +8,7 @@ using namespace std;
 int GetInput() {
   int pairs = 0;
   cout << "How many pairs of shoes did you sell this week? " << endl;
+  if (!(cin >> pairs)) {
     cout << "You entered a non-numeric. Assuming you didn't sell any..." << endl;
     return 0;
   }
